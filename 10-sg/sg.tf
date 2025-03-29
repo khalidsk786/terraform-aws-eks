@@ -119,10 +119,10 @@ resource "aws_security_group_rule" "alb_ingress_bastion_https" {
   #ipv6_cidr_blocks  = [aws_vpc.example.ipv6_cidr_block]
   security_group_id = module.alb_ingress_sg.sg_id
 }
-resource "aws_security_group_rule" "bastion_public" {
+resource "aws_security_group_rule" "alb_ingress_public_https" {
   type              = "ingress"
-  from_port         = 22
-  to_port           = 22
+  from_port         = 443
+  to_port           = 443
   protocol          = "tcp"
   #source_security_group_id = module.bastion_sg.sg_id
   cidr_blocks  = ["0.0.0.0/0"]
