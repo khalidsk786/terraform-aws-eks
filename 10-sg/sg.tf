@@ -30,7 +30,7 @@ module "vpn_sg" {
     common_tags = var.common_tags
 }
 # for bastion security group cration
-module "app_ingress_sg" {
+module "alb_ingress_sg" {
     source = "git::https://github.com/khalidsk786/terraform-aws-securitygroup.git?ref=main"
     project_name = var.project_name
     environment = var.environment
