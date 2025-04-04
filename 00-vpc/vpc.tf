@@ -20,3 +20,15 @@ module "vpc" {
 #     environment = "dev"
 #     vpc_cidr = "10.0.0.0/16"
 #     common_tags = 
+# this can be included in module
+resource "aws_db_subnet_group" "expense" {
+  name       = "${var.project_name}-${var.environment}"
+  subnet_ids = module.vpc.database_subnet_ids
+
+  tags = merge(
+    var.common_tags,
+    {
+        Name = "${var.project_name}-${var.environment}"
+    }
+  )
+}

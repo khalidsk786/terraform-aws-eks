@@ -10,7 +10,7 @@ terraform {
 terraform {
   backend "s3" { # this will configure the backend
     bucket         = "khalidskaws82s-dev2"
-    key            = "expense-dev-eks-eks" #you should change this to a unique name same key can't be used by multiple users
+    key            = "expense-dev-eks-acm" #you should change this to a unique name same key can't be used by multiple users
     region         = "us-east-1"
     dynamodb_table = "khalidskaws82s-dev2"
   }
