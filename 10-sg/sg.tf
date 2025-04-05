@@ -161,3 +161,12 @@ resource "aws_security_group_rule" "eks_control_plane_bastion" {
   source_security_group_id = module.bastion_sg.sg_id
   security_group_id = module.eks_control_plane_sg.sg_id
 }
+
+resource "aws_security_group_rule" "eks_node_alb_ingress" {
+  type              = "ingress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  source_security_group_id = module.alb_ingress_sg.sg_id
+  security_group_id = module.eks_node_sg.sg_id
+}
