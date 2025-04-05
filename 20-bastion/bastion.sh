@@ -34,5 +34,8 @@ chmod 700 get_helm.sh
 git clone https://github.com/ahmetb/kubectx /opt/kubectx
 ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+sudo dnf install mysql -y
+
 #k9s install
 curl -sS https://webinstall.dev/k9s | bash

@@ -1,4 +1,4 @@
-variable "project_name" {
+variable "project" {
     default = "expense"
 }
 
@@ -14,9 +14,6 @@ variable "common_tags" {
     }
 }
 
-variable "backend_tags" {
-    default = {}
-}
 
 variable "domain_name" {
     default = "khalidaws82.tech"
