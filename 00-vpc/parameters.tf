@@ -27,15 +27,3 @@ resource "aws_ssm_parameter" "database_subnet_group_name" {
   type  = "String"
   value = aws_db_subnet_group.expense.name
 }
-
-# data "aws_ssm_parameter" "ingress_alb_sg_id" {
-#     name = "/${var.project}/${var.environment}/ingress_alb_sg_id"
-#     type = "string"
-#     value = join(",", module.vpc.ingress_alb_sg_id)
-# }
-
-# data "aws_ssm_parameter" "ingress_alb_certificate_arn" {
-#     name = "/${var.project}/${var.environment}/ingress_alb_certificate_arn"
-#     type = "string"
-#     value = join(",", module.vpc.ingress_alb_certificate_arn)
-# }
